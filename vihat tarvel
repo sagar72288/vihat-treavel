@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vihat Travels - Raysan, Gandhinagar</title>
+    
+    <!-- Social Media Share Preview Meta Tags -->
+    <meta property="og:title" content="Vihat Travels - Cab Rental Services">
+    <meta property="og:description" content="Book Sedan, Ertiga, Innova & Tempo Traveller easily. Proprietor: Sagar Desai (Raysan, Gandhinagar)">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&auto=format&fit=crop&q=80">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&auto=format&fit=crop&q=80') no-repeat center center fixed;
+            background-size: cover;
+            padding: 20px;
+            margin: 0;
+            color: #2d3748;
+        }
+        .container {
+            max-width: 950px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.96);
+            padding: 25px;
+            border: 3px solid #1a365d;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+        .header-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: #1a365d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .header-details {
+            text-align: center;
+            font-size: 13px;
+            color: #4a5568;
+            line-height: 1.6;
+            background: #f8fafc;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .section-box {
+            background: #f8fafc;
+            border: 1px solid #cbd5e0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1a365d;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #cbd5e0;
+            padding-bottom: 5px;
+        }
+        .rate-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            font-size: 13px;
+        }
+        .rate-card-grid ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        .rate-card-grid li {
+            margin-bottom: 5px;
+        }
+        .btn {
+            background-color: #2b6cb0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .btn:hover { background-color: #2c5282; }
+        .btn-green { background-color: #25d366; }
+        .btn-green:hover { background-color: #20ba5a; }
+        .btn-share { background-color: #3182ce; }
+        .btn-share:hover { background-color: #2b6cb0; }
+        .btn-orange { background-color: #dd6b20; color: white; }
+        .btn-orange:hover { background-color: #c05621; }
+        .btn-red { background-color: #e53e3e; color: white; padding: 6px 12px; font-size: 11px; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-red:hover { background-color: #c53030; }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 3px;
+            font-size: 12px;
+        }
+        .form-group input, .form-group select {
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 8px;
+            text-align: left;
+        }
+        th { background-color: #1a365d; color: white; }
+        
+        .lang-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .lang-btn {
+            background: #e2e8f0;
+            border: 1px solid #cbd5e0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        .lang-btn:hover { background: #cbd5e0; }
+
+        /* Share Modal Popup Styles */
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .share-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        #bookingPage, #driverRegPage, #driverLoginPage, #driverDashboard, #loginPage, #adminDashboard { display: none; }
+    </style>
+</head>
+<body>
+
+<!-- MAIN HOME PAGE -->
+<div class="container" id="mainHomePage">
+    <div class="lang-bar">
+        <span style="font-size: 12px; font-weight: bold; align-self: center;">Language / ભાષા:</span>
+        <button class="lang-btn" onclick="changeLanguage('gu')">ગુજરાતી</button>
+        <button class="lang-btn" onclick="changeLanguage('en')">English</button>
+        <button class="lang-btn" onclick="changeLanguage('hi')">हिन्दी</button>
+    </div>
+
+    <div class="header-title" id="t_title">🚖 Vihat Travels</div>
+    <div class="header-details" id="t_headerDetails">
+        <strong>Proprietor:</strong> Sagar Desai &nbsp;|&nbsp; <strong>Mobile:</strong> 7228802190 &nbsp;|&nbsp; <strong>Email:</strong> r.desaisagar@gmail.com<br>
+        <strong>Address:</strong> Raysan, Gandhinagar, Gujarat - 382007 (Outstation & Local Cab Rental Services)
+    </div>
+
+    <div class="section-box">
+        <div class="section-title" id="t_rateTitle">🚖 CAB RENTAL RATE CARD & TERMS</div>
+        <div class="rate-card-grid">
+            <div>
+                <strong id="t_perKmTitle">Per Kilometer Rates:</strong>
+                <ul>
+                    <li>Sedan: <strong id="displaySedan">₹12 / km</strong></li>
+                    <li>Ertiga: <strong id="displayErtiga">₹14 / km</strong></li>
+                    <li>Innova / Crysta: <strong id="displayInnova">₹18 – ₹19 / km</strong></li>
+                    <li>Tempo Traveller (17 Seater): <strong id="displayTempo">₹30 / km</strong></li>
+                </ul>
+            </div>
+            <div>
+                <strong id="t_termsTitle">Terms & Conditions (Round Trip):</strong>
+                <ul>
+                    <li><span id="t_minRun">Min. Running</span>: <strong>300 km / 12 Hours per day</strong></li>
+                    <li><span id="t_daTitle">Driver Allowance (DA)</span>: <strong>₹300 / day</strong></li>
+                    <li><span id="t_extraTitle">Extra</span>: Toll Tax, Parking, State Permit extra as per actuals.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 25px 0; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <button class="btn" style="font-size: 14px; padding: 12px 18px;" id="btnBookNow" onclick="openBookingPage()">🚗 Customer Book</button>
+        <button class="btn btn-orange" style="font-size: 14px; padding: 12px 18px;" id="btnDriverReg" onclick="openDriverRegPage()">👨‍✈️ Driver Register</button>
+        <button class="btn btn-green" style="font-size: 14px; padding: 12px 18px;" id="btnDriverLogin" onclick="openDriverLoginPage()">🚖 Driver Login</button>
+        <button class="btn" style="background-color: #1a365d; font-size: 14px; padding: 12px 18px;" id="btnLogin" onclick="openLoginPage()">🔐 Owner Login</button>
+        <button class="btn btn-share" style="font-size: 14px; padding: 12px 18px;" id="btnShare" onclick="openShareModal()">🔗 Share Website</button>
+    </div>
+</div>
+
+<!-- SHARE POPUP MODAL -->
+<div class="share-modal" id="shareModal">
+    <div class="share-content">
+        <h3 style="color: #1a365d; margin-top: 0;">🔗 Share Vihat Travels</h3>
+        <p style="font-size: 13px; color: #4a5568;">Choose how you want to share this website:</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin: 20px 0;">
+            <button class="btn btn-green" onclick="shareViaWhatsApp()">📱 Share via WhatsApp</button>
+            <button class="btn btn-share" onclick="copyWebsiteLink()">📋 Copy Website Link</button>
+        </div>
+
+        <button class="btn" style="background-color: #718096; width: 100%;" onclick="closeShareModal()">Cancel</button>
+    </div>
+</div>
+
+<!-- CUSTOMER BOOKING PAGE -->
+<div class="container" id="bookingPage">
+    <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+        <button class="btn" style="background-color: #2b6cb0; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">🏠 Home Page</button>
+        <button class="btn" style="background-color: #718096; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">⬅️ Back</button>
+    </div>
+    
+    <div class="header-title">📋 Vihat Travels - Online Booking Form</div>
+    <div class="header-details" id="t_bookSub">
+        Fill your trip details below. Your booking will be sent to the owner for review instantly.
+    </div>
+
+    <div class="section-box">
+        <div class="section-title">Enter Trip & Contact Details</div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label id="lbl_name">Customer Name / ગ્રાહકનું નામ:</label>
+                <input type="text" id="custName" placeholder="Enter full name">
+            </div>
+            <div class="form-group">
+                <label id="lbl_phone">Mobile Number / મોબાઈલ નંબર:</label>
+                <input type="text" id="custPhone" placeholder="10-digit mobile number">
+            </div>
+            <div class="form-group">
+                <label id="lbl_vehicle">Select Vehicle / વાહન પસંદ કરો:</label>
+                <select id="custVehicle">
+                    <option value="Sedan">Sedan</option>
+                    <option value="Ertiga">Ertiga</option>
+                    <option value="Innova / Crysta">Innova / Crysta</option>
+                    <option value="Tempo Traveller 17-Seater">Tempo Traveller 17-Seater</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label id="lbl_route">Route / ક્યાંથી ક્યાં જવાનું છે:</label>
+                <input type="text" id="custRoute" placeholder="e.g. Raysan Gandhinagar to Ahmedabad">
+            </div>
+            <div class="form-group">
+                <label id="lbl_from">From Date & Time / શરૂઆતની તારીખ:</label>
+                <input type="datetime-local" id="fromDate">
+            </div>
+            <div class="form-group">
+                <label id="lbl_to">To Date & Time / પૂર્ણ થવાની તારીખ:</label>
+                <input type="datetime-local" id="toDate">
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn btn-green" id="btnSubmit" onclick="submitCustomerBooking()">✔ Submit & Notify Owner</button>
+        </div>
+    </div>
+</div>
+
+<!-- DRIVER REGISTRATION PAGE -->
+<div class="container" id="driverRegPage">
+    <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+        <button class="btn" style="background-color: #2b6cb0; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">🏠 Home Page</button>
+        <button class="btn" style="background-color: #718096; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">⬅️ Back</button>
+    </div>
+    
+    <div class="header-title">👨‍✈️ Vihat Travels - Driver Registration</div>
+    <div class="header-details">
+        ડ્રાઇવર પોતાની વિગતો, લાયસન્સ અને કાર કેટેગરી અહીં ભરી શકે છે.
+    </div>
+
+    <div class="section-box">
+        <div class="section-title">Enter Driver & Car Details</div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Driver Name (ડ્રાઇવરનું નામ):</label>
+                <input type="text" id="regDriverName" placeholder="Enter full name">
+            </div>
+            <div class="form-group">
+                <label>Mobile Number (મોબાઈલ નંબર):</label>
+                <input type="text" id="regDriverPhone" placeholder="10-digit mobile number">
+            </div>
+            <div class="form-group">
+                <label>License Number (લાયસન્સ નંબર):</label>
+                <input type="text" id="regLicense" placeholder="e.g. GJ1820150001234">
+            </div>
+            <div class="form-group">
+                <label>Car Category (કાર કેટેગરી):</label>
+                <select id="regCarCategory">
+                    <option value="Sedan">Sedan</option>
+                    <option value="Ertiga">Ertiga</option>
+                    <option value="Innova / Crysta">Innova / Crysta</option>
+                    <option value="Tempo Traveller 17-Seater">Tempo Traveller 17-Seater</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Car Number (ગાડીનો નંબર):</label>
+                <input type="text" id="regCarNumber" placeholder="e.g. GJ-18-AB-1234">
+            </div>
+            <div class="form-group">
+                <label>Aadhaar / ID Proof Number (આધાર કાર્ડ નંબર):</label>
+                <input type="text" id="regAadhaar" placeholder="12-digit Aadhaar number">
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn btn-orange" onclick="submitDriverRegistration()">✔ Submit Driver Details</button>
+        </div>
+    </div>
+</div>
+
+<!-- DRIVER LOGIN PAGE -->
+<div class="container" id="driverLoginPage">
+    <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+        <button class="btn" style="background-color: #2b6cb0; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">🏠 Home Page</button>
+        <button class="btn" style="background-color: #718096; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">⬅️ Back</button>
+    </div>
+    
+    <div class="header-title">🚖 Driver Login</div>
+    <div class="header-details">
+        Enter Driver Password to view owner-approved bookings. (Password: <strong>Driver@123</strong>)
+    </div>
+
+    <div class="section-box" style="max-width: 450px; margin: auto;">
+        <div class="form-group" style="margin-bottom: 12px;">
+            <label>Password:</label>
+            <input type="password" id="driverPasswordInput" placeholder="Enter Driver Password">
+        </div>
+        <button class="btn btn-green" style="width: 100%;" onclick="verifyDriverPassword()">Login to Driver Dashboard</button>
+    </div>
+</div>
+
+<!-- DRIVER DASHBOARD -->
+<div class="container" id="driverDashboard">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <button class="btn" style="background-color: #2b6cb0; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">🏠 Home Page</button>
+        <div style="display: flex; gap: 10px;">
+            <span style="font-size: 11px; align-self: center; color: #25d366; font-weight: bold;">● Live Auto-Sync</span>
+            <button class="btn" style="background-color: #c53030; padding: 6px 12px; font-size: 12px;" onclick="logoutDriver()">Logout</button>
+        </div>
+    </div>
+    
+    <div class="header-title">🚖 Driver Dashboard - Approved Bookings</div>
+
+    <div class="section-box" style="background: #fff; margin-top: 15px;">
+        <div class="section-title">📋 Owner-Approved Bookings (Accept / Reject)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer & Mobile</th>
+                    <th>Vehicle & Route</th>
+                    <th>From / To Date</th>
+                    <th>Status</th>
+                    <th>Action (Accept / Reject)</th>
+                </tr>
+            </thead>
+            <tbody id="driverTableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- OWNER LOGIN PAGE -->
+<div class="container" id="loginPage">
+    <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+        <button class="btn" style="background-color: #2b6cb0; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">🏠 Home Page</button>
+        <button class="btn" style="background-color: #718096; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">⬅️ Back</button>
+    </div>
+    
+    <div class="header-title">🔐 Owner Login</div>
+    <div class="header-details">
+        Authorized Personnel Only. Enter your secret password to access Dashboard.
+    </div>
+
+    <div class="section-box" style="max-width: 450px; margin: auto;">
+        <div class="form-group" style="margin-bottom: 12px;">
+            <label>Password:</label>
+            <input type="password" id="loginPasswordInput" placeholder="Enter secure password">
+        </div>
+        <button class="btn btn-green" style="width: 100%;" onclick="verifyOwnerPassword()">Login to Dashboard</button>
+    </div>
+</div>
+
+<!-- ADMIN DASHBOARD (Owner Only) -->
+<div class="container" id="adminDashboard">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <button class="btn" style="background-color: #2b6cb0; padding: 6px 12px; font-size: 12px;" onclick="goBackHome()">🏠 Home Page</button>
+        <div style="display: flex; gap: 10px;">
+            <span style="font-size: 11px; align-self: center; color: #25d366; font-weight: bold;">● Live Auto-Sync</span>
+            <button class="btn" style="background-color: #c53030; padding: 6px 12px; font-size: 12px;" onclick="logoutAdmin()">Logout</button>
+        </div>
+    </div>
+    
+    <div class="header-title">📊 Owner Dashboard - Manage Rates, Drivers & Bookings</div>
+
+    <div class="section-box" style="background: #eef2f7; border-color: #2b6cb0;">
+        <div class="section-title">⚙️ Update Cab Rental Rate Card</div>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Sedan Rate (₹/km):</label>
+                <input type="text" id="rateSedan" value="₹12 / km">
+            </div>
+            <div class="form-group">
+                <label>Ertiga Rate (₹/km):</label>
+                <input type="text" id="rateErtiga" value="₹14 / km">
+            </div>
+            <div class="form-group">
+                <label>Innova / Crysta Rate (₹/km):</label>
+                <input type="text" id="rateInnova" value="₹18 – ₹19 / km">
+            </div>
+            <div class="form-group">
+                <label>Tempo Traveller Rate (₹/km):</label>
+                <input type="text" id="rateTempo" value="₹30 / km">
+            </div>
+        </div>
+        <div style="margin-top: 10px; text-align: right;">
+            <button class="btn" style="padding: 8px 15px; font-size: 13px;" onclick="saveRateCard()">💾 Update Rate Card</button>
+        </div>
+    </div>
+
+    <div class="section-box" style="background: #fffaf0; border-color: #dd6b20;">
+        <div class="section-title" style="color: #dd6b20;">👨‍✈️ Driver Document Verification Requests</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Driver Name & Mobile</th>
+                    <th>Car Category & Number</th>
+                    <th>License & Aadhaar ID</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="adminDriverTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-box" style="background: #fff; margin-top: 15px;">
+        <div class="section-title">📋 Customer Booking Requests (Owner Review & Upload)</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer & Mobile</th>
+                    <th>Vehicle & Route</th>
+                    <th>From / To Date</th>
+                    <th>Status</th>
+                    <th>Action (Confirm & Upload for Driver)</th>
+                </tr>
+            </thead>
+            <tbody id="adminTableBody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const translations = {
+        gu: {
+            rateTitle: "🚖 કેબ રેન્ટલ રેટ કાર્ડ અને નિયમો",
+            perKm: "પ્રતિ કિલોમીટર ભાડું:",
+            terms: "નિયમો અને શરતો (રાઉન્ડ ટ્રિપ):",
+            minRun: "ન્યૂનતમ કિલોમીટર",
+            daTitle: "ડ્રાઇવર ભથ્થું (DA)",
+            extra: "વધારાના: ટોલ ટેક્સ, પાર્કિંગ, સ્ટેટ પરમિટ ખર્ચ અલગથી.",
+            bookBtn: "🚗 ગ્રાહક બુકિંગ",
+            driverRegBtn: "👨‍✈️ ડ્રાઇવર રજીસ્ટ્રેશન",
+            driverLoginBtn: "🚖 ડ્રાઇવર લોગિન",
+            loginBtn: "🔐 માલિક લોગિન",
+            shareBtn: "🔗 લિંક શેર કરો",
+            bookSub: "નીચે તમારી પ્રવાસની વિગતો ભરો. તમારું બુકિંગ માલિક દ્વારા ચકાસણી અને અપલોડ થયા પછી ડ્રાઇવરને દેખાશે."
+        },
+        en: {
+            rateTitle: "🚖 CAB RENTAL RATE CARD & TERMS",
+            perKm: "Per Kilometer Rates:",
+            terms: "Terms & Conditions (Round Trip):",
+            minRun: "Min. Running",
+            daTitle: "Driver Allowance (DA)",
+            extra: "Extra: Toll Tax, Parking, State Permit extra as per actuals.",
+            bookBtn: "🚗 Customer Book",
+            driverRegBtn: "👨‍✈️ Driver Register",
+            driverLoginBtn: "🚖 Driver Login",
+            loginBtn: "🔐 Owner Login",
+            shareBtn: "🔗 Share Website",
+            bookSub: "Fill your trip details below. Your booking will be sent to the owner for review and upload instantly."
+        },
+        hi: {
+            rateTitle: "🚖 कैब रेंटल रेट कार्ड और नियम",
+            perKm: "प्रति किलोमीटर किराया:",
+            terms: "नियम और शर्तें (राउंड ट्रिप):",
+            minRun: "न्यूनतम किमी",
+            daTitle: "ड्राइवर भत्ता (DA)",
+            extra: "अतिरिक्त: टोल टैक्स, पार्किंग, स्टेट परमिट वास्तविक रूप से अतिरिक्त।",
+            bookBtn: "🚗 कस्टमर बुकिंग",
+            driverRegBtn: "👨‍✈️ ड्राइवर रजिस्ट्रेशन",
+            driverLoginBtn: "🚖 ड्राइवर लॉगिन",
+            loginBtn: "🔐 ओनर लॉगिन",
+            shareBtn: "🔗 वेबसाइट शेयर करें",
+            bookSub: "नीचे अपनी यात्रा का विवरण भरें। आपकी बुकिंग ओनर द्वारा समीक्षा और अपलोड होने के बाद ड्राइवर को दिखाई देगी।"
+        }
+    };
+
+    function changeLanguage(lang) {
+        let t = translations[lang];
+        if(!t) return;
+        document.getElementById('t_rateTitle').innerText = t.rateTitle;
+        document.getElementById('t_perKmTitle').innerText = t.perKm;
+        document.getElementById('t_termsTitle').innerText = t.terms;
+        document.getElementById('t_minRun').innerText = t.minRun;
+        document.getElementById('t_daTitle').innerText = t.daTitle;
+        document.getElementById('t_extraTitle').innerText = t.extra;
+        document.getElementById('btnBookNow').innerText = t.bookBtn;
+        document.getElementById('btnDriverReg').innerText = t.driverRegBtn;
+        document.getElementById('btnDriverLogin').innerText = t.driverLoginBtn;
+        document.getElementById('btnLogin').innerText = t.loginBtn;
+        document.getElementById('btnShare').innerText = t.shareBtn;
+        document.getElementById('t_bookSub').innerText = t.bookSub;
+    }
+
+    window.onload = function() {
+        try {
+            let now = new Date();
+            let formatted = now.toISOString().slice(0,16);
+            let fromInput = document.getElementById('fromDate');
+            let toInput = document.getElementById('toDate');
+            if(fromInput) fromInput.value = formatted;
+            if(toInput) toInput.value = formatted;
+            loadRateCard();
+        } catch(e) {
+            console.error("Initialization error:", e);
+        }
+    };
+
+    // Auto-Sync Background Interval
+    setInterval(function() {
+        let adminDash = document.getElementById('adminDashboard');
+        let driverDash = document.getElementById('driverDashboard');
+
+        if(adminDash && adminDash.style.display === 'block') {
+            loadAdminDashboard();
+        }
+        if(driverDash && driverDash.style.display === 'block') {
+            loadDriverDashboard();
+        }
+    }, 3000); // Checks every 3 seconds automatically
+
+    function openShareModal() {
+        let modal = document.getElementById('shareModal');
+        if(modal) modal.style.display = 'flex';
+    }
+
+    function closeShareModal() {
+        let modal = document.getElementById('shareModal');
+        if(modal) modal.style.display = 'none';
+    }
+
+    function shareViaWhatsApp() {
+        try {
+            let currentUrl = window.location.href;
+            let shareText = "🚖 *Vihat Travels (Raysan, Gandhinagar)*\nBook your outstation & local cab easily!\nContact: 7228802190\n\nClick here to book now:\n" + currentUrl;
+            let waUrl = "https://wa.me/?text=" + encodeURIComponent(shareText);
+            window.open(waUrl, '_blank');
+            closeShareModal();
+        } catch(e) {
+            alert("Sharing failed. Please copy link manually.");
+        }
+    }
+
+    function copyWebsiteLink() {
+        try {
+            let currentUrl = window.location.href;
+            navigator.clipboard.writeText(currentUrl).then(() => {
+                alert("Website Link Copied Successfully!");
+                closeShareModal();
+            }).catch(() => {
+                prompt("Copy this link:", currentUrl);
+                closeShareModal();
+            });
+        } catch(e) {
+            prompt("Copy this link:", window.location.href);
+        }
+    }
+
+    function loadRateCard() {
+        try {
+            let sedan = localStorage.getItem('vihat_rate_sedan') || '₹12 / km';
+            let ertiga = localStorage.getItem('vihat_rate_ertiga') || '₹14 / km';
+            let innova = localStorage.getItem('vihat_rate_innova') || '₹18 – ₹19 / km';
+            let tempo = localStorage.getItem('vihat_rate_tempo') || '₹30 / km';
+
+            if(document.getElementById('displaySedan')) document.getElementById('displaySedan').innerText = sedan;
+            if(document.getElementById('displayErtiga')) document.getElementById('displayErtiga').innerText = ertiga;
+            if(document.getElementById('displayInnova')) document.getElementById('displayInnova').innerText = innova;
+            if(document.getElementById('displayTempo')) document.getElementById('displayTempo').innerText = tempo;
+
+            if(document.getElementById('rateSedan')) document.getElementById('rateSedan').value = sedan;
+            if(document.getElementById('rateErtiga')) document.getElementById('rateErtiga').value = ertiga;
+            if(document.getElementById('rateInnova')) document.getElementById('rateInnova').value = innova;
+            if(document.getElementById('rateTempo')) document.getElementById('rateTempo').value = tempo;
+        } catch(e) {
+            console.error("Rate card load error:", e);
+        }
+    }
+
+    function saveRateCard() {
+        try {
+            let sedan = document.getElementById('rateSedan').value;
+            let ertiga = document.getElementById('rateErtiga').value;
+            let innova = document.getElementById('rateInnova').value;
+            let tempo = document.getElementById('rateTempo').value;
+
+            localStorage.setItem('vihat_rate_sedan', sedan);
+            localStorage.setItem('vihat_rate_ertiga', ertiga);
+            localStorage.setItem('vihat_rate_innova', innova);
+            localStorage.setItem('vihat_rate_tempo', tempo);
+
+            loadRateCard();
+            alert('Rate card successfully updated!');
+        } catch(e) {
+            alert('Error updating rate card.');
+        }
+    }
+
+    function openBookingPage() {
+        hideAllPages();
+        let page = document.getElementById('bookingPage');
+        if(page) page.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function openDriverRegPage() {
+        hideAllPages();
+        let page = document.getElementById('driverRegPage');
+        if(page) page.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function openDriverLoginPage() {
+        hideAllPages();
+        let page = document.getElementById('driverLoginPage');
+        if(page) page.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function openLoginPage() {
+        hideAllPages();
+        let page = document.getElementById('loginPage');
+        if(page) page.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function goBackHome() {
+        hideAllPages();
+        let page = document.getElementById('mainHomePage');
+        if(page) page.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function hideAllPages() {
+        let pages = ['mainHomePage', 'bookingPage', 'driverRegPage', 'driverLoginPage', 'driverDashboard', 'loginPage', 'adminDashboard'];
+        pages.forEach(id => {
+            let el = document.getElementById(id);
+            if(el) el.style.display = 'none';
+        });
+    }
+
+    function verifyDriverPassword() {
+        try {
+            let passInput = document.getElementById('driverPasswordInput');
+            let pass = passInput ? passInput.value.trim() : '';
+            if(pass === "Driver@123") {
+                alert('Driver Login Successful!');
+                if(passInput) passInput.value = '';
+                hideAllPages();
+                let dash = document.getElementById('driverDashboard');
+                if(dash) dash.style.display = 'block';
+                loadDriverDashboard();
+            } else {
+                alert('Wrong Password! (Password is Driver@123)');
+            }
+        } catch(e) {
+            alert('Login error occurred.');
+        }
+    }
+
+    function verifyOwnerPassword() {
+        try {
+            let passInput = document.getElementById('loginPasswordInput');
+            let pass = passInput ? passInput.value.trim() : '';
+            if(pass === "Sagar@12") {
+                alert('Owner Login Successful!');
+                if(passInput) passInput.value = '';
+                hideAllPages();
+                let dash = document.getElementById('adminDashboard');
+                if(dash) dash.style.display = 'block';
+                loadAdminDashboard();
+            } else {
+                alert('Wrong Password! (Password is Sagar@12)');
+            }
+        } catch(e) {
+            alert('Login error occurred.');
+        }
+    }
+
+    function submitCustomerBooking() {
+        try {
+            let nameEl = document.getElementById('custName');
+            let phoneEl = document.getElementById('custPhone');
+            let vehicleEl = document.getElementById('custVehicle');
+            let routeEl = document.getElementById('custRoute');
+            let fromEl = document.getElementById('fromDate');
+            let toEl = document.getElementById('toDate');
+
+            if(!nameEl || !phoneEl || !routeEl) return;
+
+            let name = nameEl.value.trim();
+            let phone = phoneEl.value.trim();
+            let vehicle = vehicleEl ? vehicleEl.value : 'Sedan';
+            let route = routeEl.value.trim();
+            let fromDate = fromEl ? fromEl.value : '';
+            let toDate = toEl ? toEl.value : '';
+
+            if(!name || !phone || !route) {
+                alert('કૃપા કરીને નામ, મોબાઈલ નંબર અને રૂટ અવશ્ય ભરો!');
+                return;
+            }
+
+            let bookingData = {
+                id: Date.now(),
+                name,
+                phone,
+                vehicle,
+                route,
+                fromDate,
+                toDate,
+                status: 'Pending'
+            };
+
+            let bookings = [];
+            try {
+                bookings = JSON.parse(localStorage.getItem('vihat_online_bookings')) || [];
+                if(bookings.length > 500) bookings = bookings.slice(0, 500);
+            } catch(e) {
+                bookings = [];
+            }
+
+            bookings.unshift(bookingData);
+            localStorage.setItem('vihat_online_bookings', JSON.stringify(bookings));
+
+            alert('બુકિંગ રિક્વેસ્ટ સફળતાપૂર્વક માલિકને મોકલી દેવામાં આવી છે!');
+
+            let ownerPhone = "7228802190";
+            let ownerEmail = "r.desaisagar@gmail.com";
+            let waMessage = `🔔 *New Booking Request for Review!*\n\n*Customer:* ${name}\n*Phone:* ${phone}\n*Vehicle:* ${vehicle}\n*Route:* ${route}\n*From:* ${fromDate}\n\n- Vihat Travels Website`;
+            let waUrl = `https://wa.me/91${ownerPhone}?text=${encodeURIComponent(waMessage)}`;
+            
+            let mailSubject = encodeURIComponent(`New Booking Request from ${name}`);
+            let mailBody = encodeURIComponent(`Hello Sagar Desai,\n\nA new cab booking request has been received for your review and approval.\n\nCustomer: ${name}\nPhone: ${phone}\nVehicle: ${vehicle}\nRoute: ${route}\n\n- Vihat Travels System`);
+            let mailtoUrl = `mailto:${ownerEmail}?subject=${mailSubject}&body=${mailBody}`;
+
+            window.open(waUrl, '_blank');
+            window.location.href = mailtoUrl;
+
+            nameEl.value = '';
+            phoneEl.value = '';
+            routeEl.value = '';
+            goBackHome();
+        } catch(e) {
+            alert('બુકિંગ સબમિટ કરતી વખતે એરર આવી. કૃપા કરીને ફરી પ્રયત્ન કરો.');
+        }
+    }
+
+    function submitDriverRegistration() {
+        try {
+            let nameEl = document.getElementById('regDriverName');
+            let phoneEl = document.getElementById('regDriverPhone');
+            let licEl = document.getElementById('regLicense');
+            let catEl = document.getElementById('regCarCategory');
+            let carNoEl = document.getElementById('regCarNumber');
+            let aadhaarEl = document.getElementById('regAadhaar');
+
+            if(!nameEl || !phoneEl || !licEl || !carNoEl) return;
+
+            let name = nameEl.value.trim();
+            let phone = phoneEl.value.trim();
+            let license = licEl.value.trim();
+            let carCat = catEl ? catEl.value : 'Sedan';
+            let carNo = carNoEl.value.trim();
+            let aadhaar = aadhaarEl ? aadhaarEl.value.trim() : '';
+
+            if(!name || !phone || !license || !carNo) {
+                alert('કૃપા કરીને ડ્રાઇવરનું નામ, નંબર, લાયસન્સ અને કાર નંબર અવશ્ય ભરો!');
+                return;
+            }
+
+            let driverData = {
+                id: Date.now(),
+                name,
+                phone,
+                license,
+                carCat,
+                carNo,
+                aadhaar,
+                status: 'Pending'
+            };
+
+            let drivers = [];
+            try {
+                drivers = JSON.parse(localStorage.getItem('vihat_driver_registrations')) || [];
+            } catch(e) {
+                drivers = [];
+            }
+
+            drivers.unshift(driverData);
+            localStorage.setItem('vihat_driver_registrations', JSON.stringify(drivers));
+
+            alert('ડ્રાઇવર રજીસ્ટ્રેશન સફળતાપૂર્વક સબમિટ થઈ ગયું છે!');
+
+            nameEl.value = '';
+            phoneEl.value = '';
+            licEl.value = '';
+            carNoEl.value = '';
+            if(aadhaarEl) aadhaarEl.value = '';
+            goBackHome();
+        } catch(e) {
+            alert('રજીસ્ટ્રેશન કરતી વખતે એરર આવી. કૃપા કરીને ફરી પ્રયત્ન કરો.');
+        }
+    }
+
+    function logoutDriver() {
+        goBackHome();
+    }
+
+    function logoutAdmin() {
+        goBackHome();
+    }
+
+    function loadDriverDashboard() {
+        try {
+            let bookings = [];
+            try {
+                bookings = JSON.parse(localStorage.getItem('vihat_online_bookings')) || [];
+            } catch(e) {
+                bookings = [];
+            }
+
+            let tbody = document.getElementById('driverTableBody');
+            if(!tbody) return;
+            tbody.innerHTML = '';
+
+            let approvedBookings = bookings.filter(b => b.status === 'Confirmed');
+
+            if(approvedBookings.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#718096;">હજી સુધી માલિક દ્વારા કોઈ બુકિંગ અપલોડ (કન્ફર્મ) કરવામાં આવ્યું નથી.</td></tr>`;
+                return;
+            }
+
+            approvedBookings.forEach((b) => {
+                let row = `<tr>
+                    <td><strong>${b.name}</strong><br><span style="color:#4a5568; font-size:11px;">📞 ${b.phone}</span></td>
+                    <td>${b.vehicle}<br><span style="color:#2b6cb0; font-weight:bold;">${b.route}</span></td>
+                    <td><span style="font-size:11px;">From: ${b.fromDate || 'N/A'}<br>To: ${b.toDate || 'N/A'}</span></td>
+                    <td><span style="color: green; font-weight: bold;">Approved by Owner</span></td>
+                    <td>
+                        <button class="btn btn-green" style="padding: 5px 10px; font-size: 11px;" onclick="updateBookingStatusByDriver(${b.id}, 'Accepted')">✔ Accept Trip</button>
+                        <button class="btn-red" onclick="updateBookingStatusByDriver(${b.id}, 'Rejected')">✖ Reject Trip</button>
+                    </td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        } catch(e) {
+            console.error("Driver dashboard load error:", e);
+        }
+    }
+
+    function updateBookingStatusByDriver(id, newStatus) {
+        try {
+            let bookings = JSON.parse(localStorage.getItem('vihat_online_bookings')) || [];
+            let targetCustomer = null;
+
+            bookings = bookings.map(b => {
+                if(b.id === id) {
+                    b.status = newStatus;
+                    targetCustomer = b;
+                }
+                return b;
+            });
+
+            localStorage.setItem('vihat_online_bookings', JSON.stringify(bookings));
+            loadDriverDashboard();
+
+            if(targetCustomer) {
+                let cleanPhone = targetCustomer.phone.replace(/[^0-9]/g, '');
+                if(cleanPhone.length >= 10) {
+                    let msg = `Hello ${targetCustomer.name},\nYour booking with Vihat Travels for ${targetCustomer.vehicle} (${targetCustomer.route}) has been ${newStatus} by Driver!\nContact: 7228802190`;
+                    let waUrl = `https://wa.me/91${cleanPhone.slice(-10)}?text=${encodeURIComponent(msg)}`;
+                    window.open(waUrl, '_blank');
+                }
+            }
+        } catch(e) {
+            alert('Updating status failed.');
+        }
+    }
+
+    function loadAdminDashboard() {
+        try {
+            let bookings = [];
+            try {
+                bookings = JSON.parse(localStorage.getItem('vihat_online_bookings')) || [];
+            } catch(e) {
+                bookings = [];
+            }
+
+            let bookingTbody = document.getElementById('adminTableBody');
+            if(bookingTbody) {
+                bookingTbody.innerHTML = '';
+                if(bookings.length === 0) {
+                    bookingTbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#718096;">હજી સુધી કોઈ બુકિંગ નથી.</td></tr>`;
+                } else {
+                    bookings.forEach((b) => {
+                        let statusColor = b.status === 'Confirmed' ? 'green' : (b.status === 'Rejected' ? 'red' : 'orange');
+                        let row = `<tr>
+                            <td><strong>${b.name}</strong><br><span style="color:#4a5568; font-size:11px;">📞 ${b.phone}</span></td>
+                            <td>${b.vehicle}<br><span style="color:#2b6cb0; font-weight:bold;">${b.route}</span></td>
+                            <td><span style="font-size:11px;">From: ${b.fromDate || 'N/A'}<br>To: ${b.toDate || 'N/A'}</span></td>
+                            <td><span style="color: ${statusColor}; font-weight: bold;">${b.status}</span></td>
+                            <td>
+                                <button class="btn btn-green" style="padding: 5px 10px; font-size: 11px;" onclick="updateBookingStatus(${b.id}, 'Confirmed')">✔ Confirm & Upload</button>
+                                <button class="btn-red" onclick="updateBookingStatus(${b.id}, 'Rejected')">✖ Reject</button>
+                            </td>
+                        </tr>`;
+                        bookingTbody.innerHTML += row;
+                    });
+                }
+            }
+
+            let drivers = [];
+            try {
+                drivers = JSON.parse(localStorage.getItem('vihat_driver_registrations')) || [];
+            } catch(e) {
+                drivers = [];
+            }
+
+            let driverTbody = document.getElementById('adminDriverTableBody');
+            if(driverTbody) {
+                driverTbody.innerHTML = '';
+                if(drivers.length === 0) {
+                    driverTbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:#718096;">હજી સુધી કોઈ ડ્રાઇવર રજીસ્ટર થયો નથી.</td></tr>`;
+                } else {
+                    drivers.forEach((d) => {
+                        let statusColor = d.status === 'Confirmed' ? 'green' : (d.status === 'Rejected' ? 'red' : 'orange');
+                        let row = `<tr>
+                            <td><strong>${d.name}</strong><br><span style="color:#4a5568; font-size:11px;">📞 ${d.phone}</span></td>
+                            <td><span style="font-weight:bold; color:#2b6cb0;">${d.carCat}</span><br><span style="font-size:11px;">Car No: ${d.carNo}</span></td>
+                            <td><span style="font-size:11px;">License: ${d.license}<br>Aadhaar: ${d.aadhaar || 'N/A'}</span></td>
+                            <td><span style="color: ${statusColor}; font-weight: bold;">${d.status}</span></td>
+                            <td>
+                                <button class="btn btn-green" style="padding: 5px 10px; font-size: 11px;" onclick="updateDriverStatus(${d.id}, 'Confirmed')">✔ Confirm</button>
+                                <button class="btn-red" onclick="updateDriverStatus(${d.id}, 'Rejected')">✖ Reject</button>
+                            </td>
+                        </tr>`;
+                        driverTbody.innerHTML += row;
+                    });
+                }
+            }
+        } catch(e) {
+            console.error("Admin dashboard load error:", e);
+        }
+    }
+
+    function updateBookingStatus(id, newStatus) {
+        try {
+            let bookings = JSON.parse(localStorage.getItem('vihat_online_bookings')) || [];
+            let targetCustomer = null;
+
+            bookings = bookings.map(b => {
+                if(b.id === id) {
+                    b.status = newStatus;
+                    targetCustomer = b;
+                }
+                return b;
+            });
+
+            localStorage.setItem('vihat_online_bookings', JSON.stringify(bookings));
+            loadAdminDashboard();
+
+            if(targetCustomer) {
+                let cleanPhone = targetCustomer.phone.replace(/[^0-9]/g, '');
+                if(cleanPhone.length >= 10) {
+                    let msg = `Hello ${targetCustomer.name},\nYour booking with Vihat Travels for ${targetCustomer.vehicle} (${targetCustomer.route}) has been ${newStatus} by Owner!\nContact: 7228802190`;
+                    let waUrl = `https://wa.me/91${cleanPhone.slice(-10)}?text=${encodeURIComponent(msg)}`;
+                    window.open(waUrl, '_blank');
+                }
+            }
+        } catch(e) {
+            alert('Updating status failed.');
+        }
+    }
+
+    function updateDriverStatus(id, newStatus) {
+        try {
+            let drivers = JSON.parse(localStorage.getItem('vihat_driver_registrations')) || [];
+            let targetDriver = null;
+
+            drivers = drivers.map(d => {
+                if(d.id === id) {
+                    d.status = newStatus;
+                    targetDriver = d;
+                }
+                return d;
+            });
+
+            localStorage.setItem('vihat_driver_registrations', JSON.stringify(drivers));
+            loadAdminDashboard();
+
+            if(targetDriver) {
+                let cleanPhone = targetDriver.phone.replace(/[^0-9]/g, '');
+                if(cleanPhone.length >= 10) {
+                    let msg = `Hello ${targetDriver.name},\nYour driver registration with Vihat Travels for ${targetDriver.carCat} (${targetDriver.carNo}) has been ${newStatus}!\nContact: 7228802190`;
+                    let waUrl = `https://wa.me/91${cleanPhone.slice(-10)}?text=${encodeURIComponent(msg)}`;
+                    window.open(waUrl, '_blank');
+                }
+            }
+        } catch(e) {
+            alert('Updating status failed.');
+        }
+    }
+</script>
+
+</body>
+</html>
